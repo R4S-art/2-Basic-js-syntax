@@ -1,6 +1,8 @@
 // Идентификаторы
 
-const NAME = "Дезир Арман";
+let NAME;
+NAME = "Дезир Арман";
+
 const OLD = 827;
 
 function HelloName(Name){
@@ -62,3 +64,46 @@ function calculete (end){
 console.log(arr);
 }
 calculete(10);
+
+//Объекты
+
+const IMA = {nam:"Markus"};
+let ima = {nam :"Djoni"};
+
+IMA.nam = "KOL";
+ima.nam = "KOL";
+
+console.log(ima,IMA);
+
+function createUser(name,city){
+    return {name: name, city: city};
+}
+console.log(createUser("Dezir","Arman"));
+
+//Коллекции
+
+const ARR = [{name: "Markus", phone: +03423423},{name:"Dezir", phone: +231234},{name:"Kel",phone: +94242523}];
+
+function findPhoneByName(name){
+    for(let number of ARR){
+        if(number.name===name){
+            return number.phone;
+        }
+    }
+}
+console.log(findPhoneByName("Kel"));
+
+//ХЭШ -
+
+const ARR_obj ={
+  mao:{name: "Markus", phone: +03423423},dez:{name:"Dezir", phone: +231234},kel:{name:"Kel",phone: +94242523}
+};
+function FINDPhoneByName(key){
+    for(let number in ARR_obj){
+        if(number===key){
+            return ARR_obj[number].phone.toString();
+
+        }
+    }
+}
+console.log(typeof(FINDPhoneByName("dez")));
